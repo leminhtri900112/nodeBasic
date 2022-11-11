@@ -1,14 +1,12 @@
 import express from "express";
-import { getHomePage } from "../controller/homeController";
+import { getHomePage, getUserId } from "../controller/homeController";
 
 let router = express.Router();
 
 let initWebRouter = (app) => {
   router.get("/", getHomePage);
 
-  router.get("/about", (req, res) => {
-    res.send(`I'm MinhTri`);
-  });
+  router.get("/detail/user/:id", getUserId);
 
   return app.use("/", router);
 };
