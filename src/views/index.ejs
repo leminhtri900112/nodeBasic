@@ -16,7 +16,7 @@
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
     </div>
-    <%= dataUser %>
+    <!-- <%= dataUser %> -->
     <div style="margin: 10px" class="w3-container">
       <h2>Users Table</h2>
       <table class="w3-table-all w3-hoverable">
@@ -40,16 +40,43 @@
                 class="w3-button w3-green"
                 href="/detail/user/<%= JSON.parse(dataUser)[i].id %>"
                 target="_blank"
-                >Detail</a
+                >Detail
+              </a>
+              <form
+                action="/edit-user/<%= JSON.parse(dataUser)[i].id %>"
+                method="get"
               >
-              <a class="w3-button w3-yellow">Edit </a>
-              <a class="w3-button w3-red">Delete</a>
+                <button type="submit" class="w3-button w3-yellow">Edit</button>
+              </form>
+              <form action="/delete-user" method="post">
+                <input
+                  hidden
+                  type="text"
+                  name="deleteUser"
+                  value="<%= JSON.parse(dataUser)[i].id %>"
+                />
+                <button type="submit" class="w3-button w3-red">Delete</button>
+              </form>
             </td>
           </tr>
 
           <% } %>
         </tbody>
       </table>
+    </div>
+    <div style="text-align: center" class="w3-container">
+      <h2>Create User Form</h2>
+      <form action="/create-new-user" method="post">
+        <label>First name:</label><br />
+        <input type="text" name="firstName" /><br />
+        <label>Last name:</label><br />
+        <input type="text" name="lastName" /><br />
+        <label>Email:</label><br />
+        <input type="email" name="email" /><br />
+        <label for="address">Address:</label><br />
+        <input type="text" name="address" /><br /><br />
+        <input type="submit" value="Submit" />
+      </form>
     </div>
   </body>
 </html>

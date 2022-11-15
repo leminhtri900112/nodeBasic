@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h2>Update Forms</h2>
+
+    <form action="/update-user" method="post">
+      <label for="fname">First name:</label><br />
+      <input
+        type="text"
+        name="firstName"
+        value=" <%= JSON.parse(dataUser).firsname %>"
+      /><br />
+      <label for="lname">Last name:</label><br />
+      <input
+        type="text"
+        name="lastName"
+        value=" <%= JSON.parse(dataUser).lastname %>"
+      /><br />
+      <label for="email">Email:</label><br />
+      <input
+        type="email"
+        name="email"
+        value="<%= JSON.parse(dataUser).email %>"
+      /><br />
+      <label for="text">Address:</label><br />
+      <input
+        type="text"
+        name="address"
+        value="<%= JSON.parse(dataUser).address %> "
+      /><br /><br />
+      <input
+        type="text"
+        name="id"
+        hidden
+        value="<%= JSON.parse(dataUser).id %>"
+      />
+      <button type="submit" value="Submit">Update</button>
+    </form>
+  </body>
+</html>

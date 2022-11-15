@@ -5,6 +5,10 @@ import connection from "./configs/connectDB";
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT;
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+// parse application/json
+app.use(express.json());
 
 // setting view engine
 configViewEngine(app);
