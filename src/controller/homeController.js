@@ -40,7 +40,7 @@ let editUserPage = async (req, res) => {
 
 let updateUser = async (req, res) => {
   let { firstName, lastName, email, address, id } = req.body;
-  console.log("check>>>>>>>>>>", req.body);
+  //console.log("check>>>>>>>>>>", req.body);
   await pool.execute(
     `UPDATE users
     SET firsname = ?, lastname = ?, email = ?,  address = ?
