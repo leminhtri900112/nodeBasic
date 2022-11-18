@@ -49,7 +49,7 @@ let initWebRouter = (app) => {
   router.get("/upload", getUploadFile);
   router.post(
     "/upload-profile-pic",
-    upload.single("profile_pic"),
+    upload.single("profile-pic"),
     handleUploadFile
   );
 

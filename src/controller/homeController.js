@@ -57,7 +57,7 @@ let getUploadFile = (req, res) => {
   return res.render("uploadFile.ejs");
 };
 
-const upload = multer().single("profile_pic");
+const upload = multer().single("profile-pic");
 let handleUploadFile = async (req, res) => {
   upload(req, res, function (err) {
     // req.file contains information of uploaded file
